@@ -200,11 +200,15 @@ p{font-size:1.01rem;line-height:1.72;color:#614b4b}
 
 /* Final */
 .final-card{text-align:center;background:radial-gradient(circle at 50% 25%,rgba(255,218,99,.30),transparent 30%),linear-gradient(180deg,#fffdf8,#fff5e8)}
-.bouquet{position:relative;width:min(92vw,500px);height:365px;margin:5px auto 2px;filter:drop-shadow(0 22px 22px rgba(120,80,45,.10))}
-.wrap{position:absolute;left:50%;bottom:5px;transform:translateX(-50%);width:215px;height:150px;background:linear-gradient(145deg,#e9cda4,#c29d72);clip-path:polygon(5% 0,95% 0,66% 100%,34% 100%);z-index:1}
-.ribbon{position:absolute;left:50%;bottom:70px;transform:translateX(-50%);width:92px;height:25px;border-radius:99px;background:#d86f82;z-index:6}
-.stem2{position:absolute;width:5px;border-radius:8px;background:linear-gradient(#7eaa68,#4f7651);transform-origin:bottom;z-index:0}
-.sunflower{position:absolute;width:88px;height:88px;z-index:4;transform:scale(0);cursor:pointer}
+.bouquet{position:relative;width:min(92vw,500px);height:340px;margin:2px auto 0;filter:drop-shadow(0 18px 20px rgba(120,80,45,.09))}
+.wrap{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);width:220px;height:145px;background:linear-gradient(145deg,#edd1a9,#c59f74);clip-path:polygon(6% 0,94% 0,66% 100%,34% 100%);z-index:3}
+.wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(255,255,255,.13),transparent 48%,rgba(110,72,45,.06));clip-path:inherit}
+.ribbon{position:absolute;left:50%;bottom:67px;transform:translateX(-50%);width:96px;height:24px;border-radius:999px;background:linear-gradient(135deg,#d76f82,#e98c9b);z-index:6;box-shadow:0 5px 12px rgba(151,72,88,.14)}
+.bouquet-stem{position:absolute;width:5px;border-radius:999px;background:linear-gradient(#78a466,#527b50);transform-origin:50% 0;z-index:1;box-shadow:inset 1px 0 rgba(255,255,255,.18)}
+.bouquet-stem:before,.bouquet-stem:after{content:"";position:absolute;width:28px;height:13px;background:linear-gradient(145deg,#83aa70,#5b8358);border-radius:30px 4px 30px 4px;opacity:.92}
+.bouquet-stem:before{left:-24px;top:46%;transform:rotate(18deg)}
+.bouquet-stem:after{right:-24px;top:62%;transform:rotate(-18deg) scaleX(-1)}
+.sunflower{position:absolute;width:88px;height:88px;z-index:5;transform:scale(0);cursor:pointer;filter:drop-shadow(0 5px 5px rgba(112,74,30,.08))}
 .final-card.active-bloom .sunflower{animation:bloom .8s cubic-bezier(.2,.8,.2,1.2) forwards}
 @keyframes bloom{0%{transform:scale(0) rotate(-12deg)}70%{transform:scale(1.12)}100%{transform:scale(1)}}
 .sunflower .sp{position:absolute;left:34px;top:2px;width:20px;height:40px;border-radius:75% 75% 45% 45%;background:linear-gradient(#fff3a6,#ffc928);transform-origin:50% 42px}
@@ -318,9 +322,9 @@ p{font-size:1.01rem;line-height:1.72;color:#614b4b}
   .heart-row{gap:7px;margin-top:9px}
   .heart-btn{height:48px;border-radius:15px;font-size:1.45rem}
   .garden-status{margin-top:8px;font-size:.82rem}
-  .bouquet{height:285px;width:min(92vw,440px);margin:-5px auto -8px;transform:none}
-  .wrap{width:180px;height:124px}
-  .ribbon{bottom:58px;width:80px;height:21px}
+  .bouquet{height:270px;width:min(92vw,430px);margin:-3px auto -5px;transform:none}
+  .wrap{width:178px;height:116px}
+  .ribbon{bottom:54px;width:79px;height:20px}
   .sunflower{transform:scale(0)}
   .final-card p{font-size:.84rem;line-height:1.42;margin-bottom:10px}
   .signature{margin-top:8px;padding:11px 12px}
@@ -394,7 +398,7 @@ p{font-size:1.01rem;line-height:1.72;color:#614b4b}
           <div class="tag">Un lugar que ya es nuestro</div>
           <div class="icon">✨</div>
           <h3>Valle del Elqui</h3>
-          <p>Para mí ya no es simplemente un lugar bonito. Ahí comenzó oficialmente nuestro “nosotros”, así que siempre va a guardar un pedacito importante de nuestra historia.</p>
+          <p>Para mí ya no es simplemente un lugar bonito. Ahí comenzó oficialmente nuestro “nosotros”, así que para mí guarda un pedacito importante de nuestra historia.</p>
         </article>
         <article class="memory">
           <div class="tag">De mis panoramas favoritos</div>
@@ -423,7 +427,7 @@ p{font-size:1.01rem;line-height:1.72;color:#614b4b}
 
       <div class="soft">
         <p>No siempre encuentro las palabras perfectas —y claramente sigo siendo su culito de marraqueta—, pero sí quiero que sepa algo muy simple:</p>
-        <p><b>la admiro, la quiero cuidar y la amo muchísimo.</b></p>
+        <p><b>la admiro, me importa muchísimo y la amo muchísimo.</b></p>
       </div>
       <div class="actions"><button class="btn next" id="admireBtn" disabled>Ahora sí… una última cosita</button></div>
       <div class="tiny center" id="admireHint">Déjeme mostrarle cada razón primero ♥</div>
@@ -464,29 +468,30 @@ p{font-size:1.01rem;line-height:1.72;color:#614b4b}
       <h2>Sus flores amarillas 🌻</h2>
 
       <div class="bouquet" id="bouquet">
-        <div class="stem2" style="height:250px;left:48%;bottom:48px;transform:rotate(-8deg)"></div>
-        <div class="stem2" style="height:245px;left:50%;bottom:48px;transform:rotate(8deg)"></div>
-        <div class="stem2" style="height:220px;left:52%;bottom:48px;transform:rotate(18deg)"></div>
-        <div class="stem2" style="height:215px;left:45%;bottom:48px;transform:rotate(-19deg)"></div>
-        <div class="stem2" style="height:185px;left:54%;bottom:48px;transform:rotate(28deg)"></div>
-        <div class="stem2" style="height:185px;left:43%;bottom:48px;transform:rotate(-29deg)"></div>
+        <!-- Tallos unidos visualmente a cada flor y ocultos por el envoltorio -->
+        <span class="bouquet-stem" style="left:49%;top:20%;height:50%;transform:rotate(0deg)"></span>
+        <span class="bouquet-stem" style="left:27%;top:40%;height:34%;transform:rotate(-14deg)"></span>
+        <span class="bouquet-stem" style="left:71%;top:40%;height:34%;transform:rotate(14deg)"></span>
+        <span class="bouquet-stem" style="left:16%;top:59%;height:24%;transform:rotate(-24deg)"></span>
+        <span class="bouquet-stem" style="left:83%;top:59%;height:24%;transform:rotate(24deg)"></span>
+        <span class="bouquet-stem" style="left:50%;top:60%;height:22%;transform:rotate(0deg)"></span>
 
-        <div class="sunflower" data-msg="Porque su fuerza me inspira. ♥" style="left:39%;top:7%;animation-delay:.08s">
+        <div class="sunflower" data-msg="Porque su fuerza me inspira. ♥" style="left:40%;top:5%;animation-delay:.08s">
           <i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sc"></i>
         </div>
-        <div class="sunflower" data-msg="Porque amo su perseverancia." style="left:18%;top:28%;animation-delay:.18s">
+        <div class="sunflower" data-msg="Porque amo su perseverancia." style="left:18%;top:26%;animation-delay:.18s">
           <i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sc"></i>
         </div>
-        <div class="sunflower" data-msg="Porque amo cómo me trata y todo el cariño que me entrega." style="left:60%;top:28%;animation-delay:.28s">
+        <div class="sunflower" data-msg="Porque amo cómo me trata y todo el cariño que me entrega." style="left:62%;top:26%;animation-delay:.28s">
           <i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sc"></i>
         </div>
-        <div class="sunflower" data-msg="Porque con usted incluso lo simple se vuelve especial." style="left:5%;top:49%;animation-delay:.38s">
+        <div class="sunflower" data-msg="Porque con usted incluso lo simple se vuelve especial." style="left:6%;top:46%;animation-delay:.38s">
           <i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sc"></i>
         </div>
-        <div class="sunflower" data-msg="Porque quiero seguir acumulando momentos bonitos a su lado." style="left:72%;top:49%;animation-delay:.48s">
+        <div class="sunflower" data-msg="Porque disfruto muchísimo cada momento bonito que compartimos." style="left:74%;top:46%;animation-delay:.48s">
           <i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sc"></i>
         </div>
-        <div class="sunflower" data-msg="Y porque usted es mi culito de Zapallo favorito en todo el universo. 🌻" style="left:40%;top:49%;animation-delay:.58s">
+        <div class="sunflower" data-msg="Y porque usted es mi culito de Zapallo favorito en todo el universo. 🌻" style="left:40%;top:47%;animation-delay:.58s">
           <i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sp"></i><i class="sc"></i>
         </div>
         <div class="wrap"></div><div class="ribbon"></div>
